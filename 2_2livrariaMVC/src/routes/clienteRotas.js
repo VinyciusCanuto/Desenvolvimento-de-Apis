@@ -1,0 +1,15 @@
+import {Router} from "express"
+import conn from "../config/conn.js"
+
+// Import controllrs
+import { getCliente, cadastrarCliente, buscarCliente, editarCliente, deletarCliente } from "../controllers/clientesController.js"
+
+const router = Router()
+
+router.get("/", getCliente)
+router.post("/criar", cadastrarCliente)
+router.get("/:id", buscarCliente)
+router.put("/editar/:id", editarCliente)
+router.delete("/remover/:id", deletarCliente)
+
+export default router
