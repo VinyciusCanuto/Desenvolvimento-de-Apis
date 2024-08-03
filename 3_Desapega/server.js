@@ -10,9 +10,12 @@ import conn from "./src/config/conn.js"
 
 // Importação dos Modulos (models) - TABELAS
 import "./src/models/usuarioModel.js"
+import "./src/models/objetoModel.js"
+import "./src/models/objetoImagesModel.js"
 
 // Importação das rotas (routes)
 import usuarioRouter from "./src/routes/usuarioRoute.js"
+import objetoRouter from "./src/routes/objetoRoute.js"
 
 //Criação dos Middleware
 const app = express()
@@ -28,6 +31,7 @@ app.use("/public", express.static(path.join(__dirname,  "public")))
 
 //Utilização das rotas
 app.use("/usuarios", usuarioRouter)
+app.use("/objetos", objetoRouter)
 
 //use = representa o midllware
 // 404

@@ -250,6 +250,7 @@ export const editUser = async (request, response) => {
         })
 
     } catch (error) {
-        response.status(500).json({err: error})
+        console.error(error)
+        response.status(500).json({message: error.message || "Erro interno no servidor"})
     }
 }
